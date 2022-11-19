@@ -5,7 +5,7 @@ let lostMole = 0;
 
 getHole = index => document.getElementById(`hole${index}`)
 
-for(index = 0; index < 10; index++) {
+for(let i = 0; i < 10; i++) {
     let holeMole = getHole(index);
     holeMole.addEventListener('click', function() {
         if (hole.className.includes( 'hole_has-mole' )){
@@ -22,5 +22,3 @@ for(index = 0; index < 10; index++) {
         alert ('Победа!')
     }
 } 
-
-getHole()
