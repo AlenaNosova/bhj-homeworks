@@ -9,7 +9,7 @@ modalMain. addEventListener('load', function() {
 })
 
 modalClose.onclick = function(){
-
+    modalMain.hide();
 }
 
 modalShowSuccess.onclick = function() {
