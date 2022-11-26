@@ -17,6 +17,13 @@ class Game {
   }
 
   registerEvents() {
+    addEventListener('keyup', function(event) {
+      if (this.currentSymbol === event.key) {
+        this.success();
+      } else if (this.currentSymbol !== event.key) {
+        this.fail();
+      }
+    })
     /*
       TODO:
       Написать обработчик события, который откликается
