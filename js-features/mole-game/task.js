@@ -1,9 +1,10 @@
-let dead = getElementById('dead');
-let lost = getElementById('lost');
+let dead = document.getElementById('dead');
+let lost = document.getElementById('lost');
 let deadMole = 0;
 let lostMole = 0;
+let index = document.getElementsByClassName('hole');
 
-getHole = index => document.getElementById(`hole${index}`)
+const getHole = index => document.getElementById(`hole${index}`)
 
 for(let i = 0; i < 10; i++) {
     let holeMole = getHole(index);
