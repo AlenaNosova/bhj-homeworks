@@ -1,17 +1,8 @@
-let cookie = document.getElementById('cookie');
-let count = document.getElementById('clicker__counter');
-let number = 0;
+const cookie = document.getElementById('cookie');
+const count = document.getElementById('clicker__counter');
 
 function cookieClick() {
-    if (number % 2) {
-    number ++;
-    count.innerHTML = number;
-    cookie.width = 300;
-    } else {
-        number ++;
-        count.innerHTML = number;
-        cookie.width = 200;
-        }
+    cookie.width = ++count.textContent % 2 ? 250 : 200;
 };
 
 cookie.onclick = cookieClick;
