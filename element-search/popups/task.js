@@ -1,17 +1,17 @@
 let modalMain = document.getElementById('modal_main');
+let modalSuccess = document.getElementById('modal_success');
 let modalClose = document.getElementsByClassName('modal__close');
 let modalShowSuccess = document.getElementsByClassName('show_success');
-let modalSuccess = document.getElementById('modal_success');
 
 
-modalMain. addEventListener('load', function() {
+window.addEventListener('load', function() {
     modalMain.classList.add('modal_active');
 })
 
-modalClose.onclick = function(){
-    modalMain.hide();
-}
+modalClose.addEventListener('click', function(){
+    modalMain.classList.remove('modal_active');
+})
 
-modalShowSuccess.onclick = function() {
-    modalSuccess.show();
-}
+modalShowSuccess.addEventListener('click', function() {
+    modalSuccess.classList.add('modal_active');
+})
