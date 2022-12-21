@@ -1,12 +1,21 @@
-let tab = document.getElementsByClassName('tab');
-let tabContent = document.getElementsByClassName('tab__content');
-let arr = Array.from(tab);
+let tabs = document.querySelectorAll('.tab');
+let tabContent = document.querySelectorAll('.tab__content');
 
-tab.addEventListener('click', function(){
-    for(let i = 0; i > arr.length; i++){
-        let index = arr.indexOf(i);
-        tab[i].classList.add('tab_active'); 
-        tabContent[index].classList.add('tab__content_active');
-        }; 
-    }
-})
+for(let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', (event) => {
+        
+        let currentTab = event.target.closest('.tab__navigation');
+        for(let t = 0; t < currentTab.length; t++){
+            currentTab[t].classlist.remove('tab_active');
+        }
+        event.target.classList.add('tab_active');
+
+
+        let currentContent = event.target.closest('.tab__contents');
+        for(let c = 0; c < currentContent.length; t++){
+            currentContent[c].classlist.remove('tab__content_active');
+        }
+        tabContent[i].classList.add('tab__content_active');
+
+    })
+}
