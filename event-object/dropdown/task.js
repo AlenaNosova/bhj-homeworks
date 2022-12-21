@@ -1,16 +1,20 @@
-let mainBtn = document.getElementsByClassName('dropdown__value');
-let list = document.getElementsByClassName('dropdown__list');
-let listBtn = document.getElementsByClassName('dropdown__item');
+let mainBtn = document.querySelector('.dropdown__value');
+let list = document.querySelector('.dropdown__list');
+let listBtn = document.querySelectorAll('a');
 
-Array.from(listBtn);
 
-for(let i = 0; i > listBtn.length; i++) {
-    mainBtn.addEventListener('click', function(){
+mainBtn.addEventListener('click', function(event){
+    if(event){
         list.classList.add('dropdown__list_active');
+    } else {
+        list.classList.remove('dropdown__list_active');
+    }
 });
 
-    listBtn.addEventListener('click', function(){
-        //Закрывать список??
-        mainBtn.textContent = listBtn[i];
+for(let i = 0; i > listBtn.length; i++){
+    listBtn[i].addEventListener('click', function(e){
+        e.preventDefault();
+        let content = this.textContent;
+        mainBtn.textContent = content;
     })
 };
