@@ -68,6 +68,12 @@ class Autocomplete {
   }
 
   getMatches( text ) {
+
+    let selected = [];
+    selected.push(this.input.options);
+
+    selected.filter(item => item.text === text && item.value);
+    
     /*
       TODO: этот метод нужно дописать
       text - фраза, которую вводят в поле поиска
