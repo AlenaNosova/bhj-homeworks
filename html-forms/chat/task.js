@@ -15,5 +15,6 @@ input.addEventListener('keyup', function(event) {
         event.preventDefault();
         message.querySelector('.message__text').innerHTML = input.value;
         message.querySelector('.message__time').innerHTML = date.getHours() + ":" + date.getMinutes();
+        input.value = '';
     } 
 })
