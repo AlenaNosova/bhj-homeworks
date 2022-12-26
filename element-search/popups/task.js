@@ -4,9 +4,6 @@ let modalClose = document.querySelectorAll('.modal__close_times');
 let btnDanger = document.querySelector('.btn_danger')
 let btnSuccess = document.querySelector('.btn_success')
 
-console.log(btnSuccess)
-
-
 window.addEventListener('load', function() {
     modalMain.classList.add('modal_active');
 })
