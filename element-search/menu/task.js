@@ -1,24 +1,26 @@
-let links = document.querySelectorAll('.menu__link');
+const links = document.querySelectorAll('.menu__link');
+const sub = document.querySelectorAll('.menu_sub');
 
 links.forEach(el => {
     el.addEventListener('click', (e) => {
         let currentBtn = e.currentTarget; //текущий элемент
-        let dropdown = currentBtn.closest('.menu_sub').querySelector('.menu__link'); //находим выпадающее меню
+        let drop = currentBtn.closest('.menu__item').querySelector('.menu_sub'); //находим выпадающее меню
 
-        dropdown.classList.toggle('menu_active'); //показать выпадющее меню
-
-
-        //запретить переход по ссылке в выпадающем меню
-        dropdown.addEventListener('click', (event) => {
-            event.preventDefault()
-        })
-        
-
-        //одновременно не должно быть открыто более одного меню
-        currentBtn.forEach(el => {
-            if (el !== currentBtn) {
+        links.forEach(el => {
+            if(el !== currentBtn){
                 el.classList.remove('menu_active');
             }
         });
+
+        sub.forEach(el => {
+            e.preventDefault();
+            if(el !== drop) {
+                el.classList.remove('menu_active');
+            }
+        })
+
+        drop.classList.toggle('menu_active');
+        currentBtn.classList.toggle('menu_active');
     }) 
 })
+
