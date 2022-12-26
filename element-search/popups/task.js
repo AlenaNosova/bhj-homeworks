@@ -3,7 +3,6 @@ let modalSuccess = document.getElementById('modal_success');
 let modalClose = document.querySelectorAll('.modal__close_times');
 let btnDanger = document.querySelector('.btn_danger')
 let btnSuccess = document.querySelector('.btn_success')
-//let modalShowSuccess = document.getElementsByClassName('.show_success');
 
 console.log(btnSuccess)
 
