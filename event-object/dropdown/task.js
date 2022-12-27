@@ -11,10 +11,11 @@ mainBtn.addEventListener('click', function(event){
     }
 });
 
-for(let i = 0; i > listBtn.length; i++){
+for(let i = 0; i < listBtn.length; i++){
     listBtn[i].addEventListener('click', function(e){
         e.preventDefault();
         let content = this.textContent;
         mainBtn.textContent = content;
+        list.classList.remove('dropdown__list_active');
     })
 };
