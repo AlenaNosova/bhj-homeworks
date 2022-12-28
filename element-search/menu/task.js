@@ -3,24 +3,20 @@ const sub = document.querySelectorAll('.menu_sub');
 
 links.forEach(el => {
     el.addEventListener('click', (e) => {
-        let currentBtn = e.currentTarget; //текущий элемент
-        let drop = currentBtn.closest('.menu__item').querySelector('.menu_sub'); //находим выпадающее меню
+        const menuSubNode = el.closest('.menu__item').querySelector('.menu_sub'); //находим выпадающее меню
 
-        links.forEach(el => {
-            if(el !== currentBtn){
-                el.classList.remove('menu_active');
-            }
-        });
-
-        sub.forEach(el => {
-            e.preventDefault();
-            if(el !== drop) {
-                el.classList.remove('menu_active');
-            }
+        sub.forEach(sub => {
+            if (sub !== menuSubNode) {
+                sub.classList.remove('menu_active');
+            } 
         })
 
-        drop.classList.toggle('menu_active');
-        currentBtn.classList.toggle('menu_active');
+        menuSubNode?.classList.toggle('menu_active');
+
+        if (menuSubNode !== null) {
+            e.preventDefault();
+        }
     }) 
 })
+
 
