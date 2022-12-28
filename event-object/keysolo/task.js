@@ -17,17 +17,17 @@ class Game {
   }
 
   registerEvents() {
-    this.currentSymbol = document.getElementsByClassName('symbol');
+    document.addEventListener('keyup', (event) => {
+      const eventKey = event.key;
+      const currentSymbol = this.currentSymbol.textContent;
 
-    for(let i = 0; i > this.currentSymbol.length; i++){
-      this.currentSymbol[i].addEventListener('keyup', function(e){
-        if (this[i] == e.code) {
-          this.success();
-        } else if (this[i] !== e.code) {
-          this.fail();
-        }
-      })
-    }
+      if (currentSymbol === eventKey) {
+        this.success();
+      } else {
+        this.fail();
+      }
+    })
+  
     /*
       TODO:
       Написать обработчик события, который откликается
