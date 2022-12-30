@@ -1,21 +1,10 @@
-const div = document.getElementsByClassName('reveal');
+const div = document.querySelectorAll('.reveal');
+console.log(div)
 
-document.addEventListener('scroll',function isVisible(el){
-    const x = { top, bottom } = el.getBoundingClientRect();
-
-    if(bottom < 0) {
-        return false;
+window.addEventListener ('scroll', () => {
+    for (let i = 0; i < div.length; i++) {
+        if(div[i].getBoundingClientRect().top < window.innerHeight) {
+            div[i].classList.add('reveal_active');
+        }   
     }
-
-    if(top > window.innerHeight){
-        return false;
-    }
-
-    return true;
 })
-
-function addClass (){
-    if (x === true) {
-         div.classList.add('reveal_active'); 
-    }
-};
