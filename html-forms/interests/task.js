@@ -1,12 +1,15 @@
-let interest = document.getElementsByTagName('label');
-let interestActive = document.querySelectorAll('.interests_active');
+const checkboxes = document.querySelectorAll('.interest__check');
 
-interest.onclick = function(){
-    for (let i = 0; i < interestActive.length; i++){
-        if(this.checked == true){
-            interestActive[i].checked = true;
-        } else if(this.checked == false){
-            interestActive[i].checked = false;
+checkboxes.forEach (function (event) {
+    event.addEventListener('change', function () {
+        if(event.closest('.interests_active') == null) {
+            event.parentElement.nextElementSibling.querySelectorAll('input').forEach (el => {
+                if (event.checked) {
+                    el.checked = true;
+                } else {
+                    el.checked = false;
+                }
+            })
         }
-    }
-}
+    })
+})
